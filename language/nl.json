@@ -1,0 +1,183 @@
+{
+  "semantics": [
+    {
+      "label": "Koptekst"
+    },
+    {
+      "label": "Taakomschrijving"
+    },
+    {
+      "label": "Argumenten",
+      "entity": "argument",
+      "field": {
+        "label": "Argument",
+        "description": "De uitspraak die de gebruiker moet verwerken"
+      }
+    },
+    {
+      "label": "Basis",
+      "default": "Basis"
+    },
+    {
+      "label": "Basis instructie"
+    },
+    {
+      "label": "Bronnen",
+      "description": "Optionele links naar de bronnen."
+    },
+    {
+      "label": "Gedragsinstellingen",
+      "description": "Met deze opties kun je het gedrag bepalen.",
+      "fields": [
+        {
+          "label": "Opnieuw proberen?",
+          "description": "Vink dit aan als je wilt dat de gebruiker het opnieuw kan proberen"
+        },
+        {
+          "label": "De argumenten willekeurig verdelen",
+          "description": "De vooraf ingevulde argumenten worden willekeurig verdeeld"
+        },
+        {
+          "label": "Geef de opmerkingen onder de verklaring weer",
+          "description": "Als de gebruiker commentaar heeft gegeven, wordt dit weergegeven in de lijst met argumenten"
+        },
+        {
+          "label": "Toon samenvatting",
+          "description": "Wil je dat de gebruiker een samenvatting geeft waarin de redenenen van zijn/haar antwoorden woren toegelicht?"
+        }
+      ]
+    },
+    {
+      "label": "Lokaliseer",
+      "fields": [
+        {
+          "label": "Koptekst voor de 'Voor' kolom",
+          "default": "Argumenten voor"
+        },
+        {
+          "label": "Koptekst voor de 'Tegen' kolom",
+          "default": "Argumenten tegen"
+        },
+        {
+          "label": "Plaatshouder voor de tekstvakken",
+          "default": "Geef een korte samenvatting in je eigen woorden"
+        },
+        {
+          "label": "Plaatshouder wanneer er geen argumenten zijn aangegeven",
+          "default": "Geen argumenten"
+        },
+        {
+          "label": "Label voor de \"Bronnen\"-knop",
+          "default": "Bronnen"
+        },
+        {
+          "label": "Label voor de \"Opnieuw\"-knop",
+          "default": "Opnieuw"
+        },
+        {
+          "label": "Label voor de \"Argument toevoegen\"-knop",
+          "default": "Argument toevoegen"
+        },
+        {
+          "label": "Label voor de \"Ja\"-knop",
+          "default": "Ja"
+        },
+        {
+          "label": "Label voor de \"Nee\"-knop",
+          "default": "Nee"
+        },
+        {
+          "label": "Informeer de gebruiker dat de gegevens verloren gaan als hij/zij doorgaat",
+          "default": "Als je doorgaat, gaan al je wijzigingen verloren"
+        },
+        {
+          "label": "Label voor de \"Ga verder\"-knop",
+          "default": "Ga verder"
+        },
+        {
+          "label": "Korte tekst voor de opties waar je de argumenten naartoe kunt verplaatsen",
+          "default": "Verplaats naar"
+        },
+        {
+          "label": "Label om de verwijdering van het argument weer te geven",
+          "default": "Argument verwijderen"
+        },
+        {
+          "label": "Tekst in de plaatsingszone voor argumenten wanneer het toevoegen van nieuwe argumenten is uitgeschakeld",
+          "default": "Plaats je argumenten hier"
+        },
+        {
+          "label": "Tekst in de plaatsingszone voor argumenten wanneer het toevoegen van nieuwe argumenten is ingeschakeld",
+          "default": "Plaats een bestaand argument of schrijf een nieuw argument"
+        }
+      ]
+    },
+    {
+      "label": "Bronnenrapport",
+      "fields": [
+        {
+          "label": "Label voor de \"Maak een document\"-knop",
+          "default": "Maak een document"
+        },
+        {
+          "label": "Label voor de \"Exporteer\" knop",
+          "default": "Exporteer"
+        },
+        {
+          "label": "Label voor de \"Selecteer alles\" knop",
+          "default": "Selecteer alles"
+        },
+        {
+          "label": "Koptekst boven de \"Bronnen\" tabel",
+          "default": "Bronnen"
+        },
+        {
+          "label": "Titel van de koptekst in de bronnen tabel",
+          "default": "Titel"
+        },
+        {
+          "label": "Intro koptekst in de bronnen tabel",
+          "default": "Introductie"
+        },
+        {
+          "label": "Url koptekst in de bronnen tabel",
+          "default": "Url"
+        },
+        {
+          "label": "Label wanneer er geen bronnen zijn gevonden",
+          "default": "Geen bronnen gevonden"
+        },
+        {
+          "label": "Label wanneer er geen samenvatting wordt gegeven",
+          "default": "Geen samenvatting gegeven"
+        }
+      ]
+    },
+    {
+      "label": "Toegankelijkheid",
+      "fields": [
+        {
+          "label": "Sluit",
+          "default": "Sluit"
+        },
+        {
+          "label": "Sleep",
+          "default": "Sleep"
+        },
+        {
+          "label": "'Sleepbaar item' label voor schermlezers",
+          "description": "Beschikbare variabelen zijn :argument",
+          "default": "Sleepbaar onderdeel: :argument"
+        },
+        {
+          "label": "Titel voor het dialoogvenster van het actiemenu",
+          "default": "Actiemenu"
+        },
+        {
+          "label": "Beschrijving voor het dialoogvenster van het actiemenu",
+          "default": "Selecteer de actie die je wilt uitvoeren met dit argument"
+        }
+      ]
+    }
+  ]
+}
