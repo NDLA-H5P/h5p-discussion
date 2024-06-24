@@ -28,8 +28,8 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 .h5p-discussion-button-export,
 .h5p-discussion-reset-modal .continue {
   @extend .h5p-discussion-button;
-  background-color: #1f1f1f;
-  border: 2px solid #404040;
+  background-color: #507AA4;
+  border: 2px solid #CCCCCC;
 
   &:hover {
     background-color: #363636;
@@ -67,11 +67,21 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   .h5p-discussion-summary,
   .h5p-discussion-category-default {
     width: 100%;
+
+    #summary-header {
+      display: block;
+      font-size: 1.5em;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
   }
 
   .h5p-discussion-pro,
   .h5p-discussion-against {
-    width: 49%;
+    width: 48%;
     margin-top: 1rem;
   }
 
@@ -87,6 +97,13 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     & > div {
       width: 100%;
       display: flex;
+    }
+  }
+
+  .h5p-discussion-right-aligned {
+    .h5p-discussion-actionmenu {
+      left: unset !important;
+      right: 0;
     }
   }
 }
@@ -105,29 +122,10 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   .h5p-discussion-argument-container > div {
     display: flex;
   }
-
-  .h5p-discussion-pro,
-  .h5p-discussion-against {
-    .h5p-discussion-header-argument-add {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-
-      :not(.fa){
-        display: block;
-        text-decoration: underline;
-      }
-
-      .fa {
-        font-size: 0.8rem;
-        margin-right: 0.4rem;
-      }
-    }
-  }
 }
 
 .h5p-discussion-column{
-  padding: 0 1rem;
+  margin: 0 1rem;
 }
 
 .h5p-discussion-surface {
@@ -143,7 +141,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 .h5p-discussion-header {
-  background-color: #2880d0;
+  background-color: #507AA4;
   display: flex;
   margin: 0;
   align-items: center;
@@ -394,6 +392,10 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   width: 100%;
 }
 
+.h5p-discussion-draggable-element > div {
+  position: relative;
+}
+
 .h5p-discussion-add {
   border: 1px solid #dbe2e8;
   border-radius: $borderRadius;
@@ -450,7 +452,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 .h5p-discussion-footer {
-  background-color: #1f1f1f;
+  background-color: #507AA4;
   color: white;
   padding: 1.25rem;
   display: flex;
@@ -475,10 +477,6 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   border-radius: $borderRadius;
   border: 2px solid #dbe2e8;
   padding: 1rem;
-
-  .h5p-discussion-header-argument-add {
-    display: none;
-  }
 }
 
 .h5p-discussion-pro,
@@ -493,24 +491,53 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     text-shadow: 2px 1px 3px rgba(28,28,28,0.5);
     border-radius: $borderRadius $borderRadius 0 0;
 
+    .h5p-discussion-header-icon {
+      &::before {
+        font-family: "H5PFontAwesome4", sans-serif;
+        font-size: 1.5em;
+        font-style: normal;
+        position: absolute;
+      }
+    }
   }
 
-  .h5p-discussion-header-argument-add {
-    margin-left: auto;
-    margin-right: 0.5rem;
-    background: transparent;
-    border: 0;
-    color: inherit;
-    display: flex;
+  .h5p-discussion-add-button {
+    background-color: #fff;
+    border: 1px solid #dbe2e8;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    padding: 0.1875rem;
+    text-align: center;
+    width: fit-content;
+    word-break: break-word;
 
-    :not(.fa){
-      display: none;
+    .h5p-discussion-add-button-content {
+      align-items: center;
+      background-color: rgba(219,226,232,.25);
+      background-size: cover;
+      border: none;
+      border-radius: inherit;
+      color: #363636;
+      display: flex;
+      flex-wrap: nowrap;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.3125rem 0.625rem;
+
+      .fa {
+        color: inherit;
+        font-size: 1.25rem;
+        margin-right: 0.5675rem;
+      }
     }
 
-    .fa {
-      font-size: 1.6rem;
+    &:hover {
+      .h5p-discussion-add-button-content {
+        background-color: #ffffff;
+      }
     }
-
   }
 
   .h5p-discussion-category-content {
@@ -522,35 +549,41 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   }
 
   .h5p-discussion-column{
-    padding: 1rem;
+    margin: 1rem;
   }
 }
 
 .h5p-discussion-pro {
   .h5p-discussion-category-header {
-    background-color: #54a169;
+    background-color: #458356;
     color: #ffffff;
   }
 
   .h5p-discussion-header-icon {
-    background-color: #5bb06e;
-    border: 3px solid #74d690;
+    background-color: #4D9360;
+    border: 3px solid #6CB27F;
+
+    &::before {
+      content: "\f164";
+      filter: drop-shadow(2px 2px 2px rgba(0 0 0 / 0.2));
+    }
   }
 }
 
 .h5p-discussion-against {
   .h5p-discussion-category-header {
-    background-color: #de5050;
+    background-color: #D83131;
     color: #ffffff;
   }
 
   .h5p-discussion-header-icon {
-    background-color: #de5050;
-    border: 3px solid #fa837d;
+    background-color: #DB4343;
+    border: 3px solid #E57676;
 
-    img {
-      transform: rotateX(180deg);
-      filter: drop-shadow(2px -2px 2px rgba(0,0,0,0.2));
+    &::before {
+      content: "\f165";
+      filter: drop-shadow(2px -2px 2px rgba(0 0 0 / 0.2));
+      top: 0.6em;
     }
   }
 }
@@ -590,13 +623,24 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   flex: auto;
 
   label,
-  .h5p-discussion-popover-actionmenu-delete {
+  .h5p-discussion-popover-actionmenu-delete,
+  .h5p-discussion-popover-actionmenu-edit {
+    color: #1a1616;
     padding: 1rem 0.9rem;
     display: flex;
     overflow: hidden;
     align-items: center;
+
     &:hover {
       background-color: rgba(3,3,3,0.05);
+    }
+  }
+
+  .h5p-discussion-popover-actionmenu-delete-icon {
+    &::before {
+      content: "\f014";
+      font-family: "H5PFontAwesome4", sans-serif;
+      font-size: 1.25em;
     }
   }
 
@@ -632,7 +676,8 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     color: #121212;
   }
 
-  .h5p-discussion-popover-actionmenu-delete .h5p-discussion-popover-actionmenu-labeltext {
+  .h5p-discussion-popover-actionmenu-delete .h5p-discussion-popover-actionmenu-labeltext,
+  .h5p-discussion-popover-actionmenu-edit .h5p-discussion-popover-actionmenu-labeltext {
     color: #1a1616;
   }
 }
@@ -669,10 +714,6 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   top: -0.5rem;
   left: -0.5rem;
   box-shadow: 2px 2px 4px 1px rgba(3,3,3,0.2);
-
-  img {
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
-  }
 }
 
 .h5p-ri {
@@ -702,6 +743,26 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 .export-preview {
+  .h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
+  .h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
   .page-description {
     font-style: italic;
   }
@@ -846,32 +907,27 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 
 .h5p-discussion-dropzone {
   border: 2px dashed #cfcfcf;
-  margin: 1rem;
+  border-radius: 5px;
 
   & > div {
-    box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.1);
-    margin: 0.375rem;
-    background-color: #e6e6e6;
     font-size: 0.875rem;
     color: #666666;
-    font-style: italic;
     text-decoration: none solid rgb(102, 102, 102);
     line-height: 1.25rem;
     flex: auto;
-    height: 4em;
+    height: 4rem;
     align-items: center;
     justify-content: center;
     display: flex;
-    text-align: center;
-    padding: 0.2rem
   }
 
+  .h5p-discussion-drag-active &,
   &.h5p-discussion-active {
     border-color: #1a73d9;
 
     & > div {
       background-color: #bbd1f0;
-      box-shadow: inset 0 0 5px 1px rgba(39,75,143,0.28);
+      color: #1458A7;
     }
   }
 }

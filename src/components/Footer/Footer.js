@@ -4,7 +4,7 @@ import Reset from './Reset';
 
 function Footer() {
   return (
-    <section className={"h5p-discussion-footer"}>
+    <section className={'h5p-discussion-footer'}>
       <Reset/>
       <Export/>
     </section>

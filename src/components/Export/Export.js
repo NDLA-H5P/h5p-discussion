@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
-import {useDiscussionContext} from "context/DiscussionContext";
-import {escapeHTML, stripHTML} from "../utils";
+import {useDiscussionContext} from 'context/DiscussionContext';
+import {escapeHTML, stripHTML} from '../utils';
 
 function Export() {
 
@@ -42,16 +42,16 @@ function Export() {
       summaryComment: summary,
       resources: resources,
       unprocessedArguments: userInput.categories
-        .filter(category => category.isArgumentDefaultList)
-        .map(category => category.connectedArguments)
+        .filter((category) => category.isArgumentDefaultList)
+        .map((category) => category.connectedArguments)
         .reduce((acc, val) => acc.concat(val), []),
       proArguments: userInput.categories
-        .filter(category => category.id === 'pro')
-        .map(category => category.connectedArguments.map(argumentId => userInput.argumentsList[argumentId]))
+        .filter((category) => category.id === 'pro')
+        .map((category) => category.connectedArguments.map((argumentId) => userInput.argumentsList[argumentId]))
         .reduce((acc, val) => acc.concat(val), []),
       contraArguments: userInput.categories
-        .filter(category => category.id === 'contra')
-        .map(category => category.connectedArguments.map(argumentId => userInput.argumentsList[argumentId]))
+        .filter((category) => category.id === 'contra')
+        .map((category) => category.connectedArguments.map((argumentId) => userInput.argumentsList[argumentId]))
         .reduce((acc, val) => acc.concat(val), []),
     });
   }
@@ -60,7 +60,7 @@ function Export() {
     const documentExportTemplate =
             '<div class="export-preview">' +
             '<div class="page-header" role="heading" tabindex="-1">' +
-            ' <h1 class="page-title">{{mainTitle}}</h1>' +
+            ' <div class="page-title h1">{{mainTitle}}</div>' +
             '</div>' +
             '<div class="page-description">{{description}}</div>' +
             '<table class="page-pro-arguments">' +
@@ -73,12 +73,12 @@ function Export() {
             '</table>' +
             '{{#useSummary}}' +
             '{{#hasSummaryComment}}' +
-            '<h2>{{summaryHeader}}</h2>' +
+            '<div class="h2">{{summaryHeader}}</div>' +
             '<p>{{summaryComment}}</p>' +
             '{{/hasSummaryComment}}' +
             '{{/useSummary}}' +
             '{{#hasResources}}' +
-            '<h2>{{resourceHeader}}</h2>' +
+            '<div class="h2">{{resourceHeader}}</div>' +
             '<table class="page-resources">' +
             '<tr><th>{{resourceHeaderTitle}}</th><th>{{resourceHeaderIntro}}</th><th>{{resourceHeaderUrl}}</th></tr>' +
             '{{#resources}}<tr><td>{{title}}</td><td>{{introduction}}</td><td>{{url}}</td></tr>{{/resources}}' +
@@ -116,17 +116,16 @@ function Export() {
   return (
     <>
       <button
-        className={"h5p-discussion-button-export"}
+        className={'h5p-discussion-button-export'}
         onClick={handleExport}
-        type={"button"}
+        type={'button'}
       >
         <span
-          className={"h5p-ri hri-document"}
-          aria-hidden={true}
+          className={'h5p-ri hri-document'}
         />
         {translate('createDocument')}
       </button>
-      <div className={"export-container"} ref={exportContainer}/>
+      <div className={'export-container'} ref={exportContainer}/>
     </>
   );
 }

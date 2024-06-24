@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Droppable } from 'react-beautiful-dnd';
 import classnames from 'classnames';
-import {ElementLayout} from "./Element";
-import {ArgumentLayout} from "../Argument/Argument";
-import UnEditableArgument from "../Argument/components/UnEditableArgument";
-import {getDnDId} from "../utils";
+import {ElementLayout} from './Element';
+import {ArgumentLayout} from '../Argument/Argument';
+import UnEditableArgument from '../Argument/components/UnEditableArgument';
+import {getDnDId} from '../utils';
 
 function Column(props) {
   const {
@@ -22,7 +22,7 @@ function Column(props) {
       <Droppable
         droppableId={droppableId}
         renderClone={(provided, snapshot, rubrics) => {
-          const index = argumentsList.findIndex(element => getDnDId(element) === rubrics.draggableId);
+          const index = argumentsList.findIndex((element) => getDnDId(element) === rubrics.draggableId);
           const argument = argumentsList[index];
           return (
             <ElementLayout
@@ -42,8 +42,8 @@ function Column(props) {
             <div
               {...provided.droppableProps}
               ref={provided.innerRef}
-              className={classnames("h5p-discussion-column", {
-                "h5p-discussion-drag-active": snapshot.isDraggingOver && snapshot.draggingFromThisWith === null
+              className={classnames('h5p-discussion-column', {
+                'h5p-discussion-drag-active': snapshot.isDraggingOver && snapshot.draggingFromThisWith === null
               })}
             >
               {children}

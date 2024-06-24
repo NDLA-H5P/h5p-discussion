@@ -35,7 +35,7 @@ export function ActionMenuDataObject(initValues) {
 }
 
 export function getDnDId(element) {
-  return element.prefix + "-" + element.id;
+  return element.prefix + '-' + element.id;
 }
 
 export function debounce(func, wait, immediate) {
@@ -63,13 +63,13 @@ export function escapeHTML(html) {
 
 export function stripHTML(html) {
   const element = document.createElement('div');
-  element.innerHTML = html
+  element.innerHTML = html;
   return element.innerText;
 }
 
 export function sanitizeParams(params) {
-  const filterResourceList = element => Object.keys(element).length !== 0 && element.constructor === Object;
-  const handleObject = sourceObject => {
+  const filterResourceList = (element) => Object.keys(element).length !== 0 && element.constructor === Object;
+  const handleObject = (sourceObject) => {
     if ( sourceObject === undefined || sourceObject === null || !filterResourceList(sourceObject)) {
       return sourceObject;
     }
@@ -92,14 +92,14 @@ export function sanitizeParams(params) {
   } = params;
 
   if ( Array.isArray(argumentsList) ) {
-    argumentsList = argumentsList.map(argument => decodeHTML(argument));
+    argumentsList = argumentsList.map((argument) => decodeHTML(argument));
   }
 
   if (resources.params.resourceList && resources.params.resourceList.filter(filterResourceList).length > 0) {
     resources.params = {
       ...resources.params,
       l10n: handleObject(resources.params.l10n),
-      resourceList: resources.params.resourceList.filter(filterResourceList).map(resource => {
+      resourceList: resources.params.resourceList.filter(filterResourceList).map((resource) => {
         const {
           title,
           introduction,
@@ -145,16 +145,16 @@ const DiscussionClassnames = {
 export const breakpoints = () => {
   return [
     {
-      "className": DiscussionClassnames.mediumTablet,
-      "shouldAdd": ratio => ratio >= 22 && ratio < 40,
+      'className': DiscussionClassnames.mediumTablet,
+      'shouldAdd': (ratio) => ratio >= 22 && ratio < 40,
     },
     {
-      "className": DiscussionClassnames.largeTablet,
-      "shouldAdd": ratio => ratio >= 40 && ratio < 60,
+      'className': DiscussionClassnames.largeTablet,
+      'shouldAdd': (ratio) => ratio >= 40 && ratio < 60,
     },
     {
-      "className": DiscussionClassnames.large,
-      "shouldAdd": ratio => ratio >= 60,
+      'className': DiscussionClassnames.large,
+      'shouldAdd': (ratio) => ratio >= 60,
     },
   ];
 };
@@ -170,4 +170,14 @@ export function getRatio(container) {
   }
   const computedStyles = window.getComputedStyle(container);
   return container.offsetWidth / parseFloat(computedStyles.getPropertyValue('font-size'));
+}
+
+/**
+ * Check if a number is even
+ * 
+ * @param {number} number
+ * @returns {boolean}
+ */
+export function isEven(number) {
+  return number % 2 === 0;
 }
